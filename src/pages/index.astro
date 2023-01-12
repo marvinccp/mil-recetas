@@ -1,0 +1,38 @@
+---
+const options = ["pescado", "carnes", "arroces", "ensaladas"];
+import BaseLayout from "../layouts/base-layout.astro";
+import "../styles/Global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Home</title>
+  </head>
+  <body>
+    <BaseLayout />
+    <section class="index-container">
+      <h3>Mil Recetas</h3>
+      <ul>
+        {
+          options.map((receta) => (
+            <li>
+              <a href="#">{receta}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </body>
+</html>
+<style>
+	.index-container{
+		margin: 50px auto;
+		max-width: 800px;
+		    min-width: 365px;
+	
+	}
+</style>
