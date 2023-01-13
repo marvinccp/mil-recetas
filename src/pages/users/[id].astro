@@ -1,8 +1,14 @@
 ---
 export async function getStaticPaths() {
-  const res = await( await fetch('https://jsonplaceholder.typicode.com/users')).json()
 
-  return res.map((user) => {
+  const data = await (
+    await fetch("https://jsonplaceholder.typicode.com/users")
+  ).json();
+  
+ 
+  return data.map((user) => {
+
+    
     return {
       params: { id: user.id },
       props: { user },
@@ -10,11 +16,10 @@ export async function getStaticPaths() {
   });
 }
 
-
 const { id } = Astro.params;
 const { user } = Astro.props;
 ---
+
 <h3>id: {id}</h3>
-<h2>Nombre: {user.name}</h2>
-<h2>Nombre: {user.username}</h2>
-<h2>Nombre: {user.email}</h2>
+<h1>{user.name}</h1>
+

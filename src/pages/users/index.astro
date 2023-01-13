@@ -1,11 +1,19 @@
 ---
-const res = await( await fetch('https://jsonplaceholder.typicode.com/users')).json()
+const res = await( await fetch("https://jsonplaceholder.typicode.com/users")
+).json();
+
 ---
 
+<h3>Prueba de fetch</h3>
+
 {
-    res.map( user => (
-        <ul>
-            <li><a href={`/users/${user.id}`}>{user.name}</a></li>
-        </ul>
-    ))
+  res.map((user) => (
+    <ul>
+      <li>
+        <a href={`/users/${user.id}`}>{user.name}</a>
+      </li>
+    </ul>
+  ))
 }
+
+
