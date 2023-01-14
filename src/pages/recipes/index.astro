@@ -1,0 +1,23 @@
+---
+import '../../styles/Global.css'
+import BaseLayout from "../../layouts/base-layout.astro";
+
+const res = await( await fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=b")
+).json();
+
+---
+<BaseLayout/>
+<h3>Prueba de fetch</h3>
+
+{
+  res.meals.map((recipe) => (
+    <ul>
+      <li>
+        <a href={`/recipes/${recipe.strMeal}`}>{recipe.strMeal}</a>
+      </li>
+      <img src={recipe.strMealThumb} alt={recipe.strMeal}>
+    </ul>
+  ))
+}
+
+

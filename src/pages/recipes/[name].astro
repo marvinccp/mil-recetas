@@ -1,0 +1,27 @@
+---
+import '../../styles/Global.css'
+import BaseLayout from "../../layouts/base-layout.astro";
+export async function getStaticPaths() {
+
+  const data = await (
+    await fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=b")
+  ).json();
+  
+ 
+  return data.meals.map((recipe) => {
+
+    
+    return {
+      params: { name: recipe.strMeal},
+      props: { recipe },
+    };
+  });
+}
+
+const { id } = Astro.params;
+const { recipe } = Astro.props;
+---
+<BaseLayout />
+<h3>id: {id}</h3>
+<h1>{recipe.strMeal}</h1>
+
