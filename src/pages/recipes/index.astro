@@ -1,16 +1,15 @@
 ---
 import "../../styles/Global.css";
 import BaseLayout from "../../layouts/base-layout.astro";
-
 const res = await (
-  await fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=h")
+  await fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=s")
 ).json();
 ---
 
 <BaseLayout />
 <div class="title-container">
 
-  <h2 class="title">Recetas</h2>
+  <h2 class="title">Recipes</h2>
 </div>
 <section class="recipes-container">
   {
@@ -35,7 +34,7 @@ const res = await (
     grid-template-rows: 1fr;
     gap: 25px;
 
-    max-width: 70%;
+    max-width: 85%;
     
   }
 
@@ -44,13 +43,36 @@ const res = await (
   }
   .recipe-image-container img {
     width: 100%;
+    margin: 12px 0 0 0;
   }
 
   .title-container{
    display: flex;
-   width: 80%;
+   width: 90%;
    justify-content: center;
    align-items: center;
    margin: 110px auto 20px auto;
+  }
+
+  a{
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: rgb(81, 80, 80);
+    font-weight: bold;
+  }
+  @media(min-width:768px){
+
+.recipes-container {
+    
+    max-width: 70%;
+    
+  }
+
+
+
+
+
+
+
   }
 </style>
