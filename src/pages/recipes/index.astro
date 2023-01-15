@@ -1,23 +1,56 @@
 ---
-import '../../styles/Global.css'
+import "../../styles/Global.css";
 import BaseLayout from "../../layouts/base-layout.astro";
 
-const res = await( await fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=b")
+const res = await (
+  await fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=b")
 ).json();
-
 ---
-<BaseLayout/>
-<h3>Prueba de fetch</h3>
 
-{
-  res.meals.map((recipe) => (
-    <ul>
-      <li>
-        <a href={`/recipes/${recipe.strMeal}`}>{recipe.strMeal}</a>
-      </li>
-      <img src={recipe.strMealThumb} alt={recipe.strMeal}>
-    </ul>
-  ))
-}
+<BaseLayout />
+<div class="title-container">
 
+  <h2 class="title">Recipes</h2>
+</div>
+<section class="recipes-container">
+  {
+    res.meals.map((recipe) => (
+      <article class="recipe-card-container">
+        <div class="recipe-image-container">
+          <a href={`/recipes/${recipe.strMeal}`}>
+            <h4>{recipe.strMeal}</h4>
+          </a>
+          <a href={`/recipes/${recipe.strMeal}`}>
+          <img src={recipe.strMealThumb} alt={recipe.strMeal} />
+          </a>
+        </div>
+      </article>
+    ))
+  }
+</section>
+<style>
+  .recipes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr) );
+    grid-template-rows: 1fr;
+    gap: 25px;
 
+    max-width: 70%;
+    
+  }
+
+  .recipe-image-container {
+    width: 100%;
+  }
+  .recipe-image-container img {
+    width: 100%;
+  }
+
+  .title-container{
+   display: flex;
+   width: 80%;
+   justify-content: center;
+   align-items: center;
+   margin: 40px auto 20px auto;
+  }
+</style>
