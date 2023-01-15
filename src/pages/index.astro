@@ -1,5 +1,4 @@
 ---
-const options = ["pescado", "carnes", "arroces", "ensaladas"];
 import BaseLayout from "../layouts/base-layout.astro";
 import "../styles/Global.css";
 ---
@@ -14,26 +13,43 @@ import "../styles/Global.css";
   </head>
   <body>
     <BaseLayout />
-    <a href="/users">Users</a>
     <section class="index-container">
-      <h3>Mil Recetas</h3>
-      <ul>
-        {
-          options.map((receta) => (
-            <li>
-              <a href="#">{receta}</a>
-            </li>
-          ))
-        }
-      </ul>
+      <h3>MisRecetas</h3>
+      <p>
+        Prototipo de una aplicación de recetas, con información completa de
+        ingredientes, proceso e incluso con un un video explicativo
+      </p>
+      <div class="image-container">
+        <a href="/recipes"><h1>Recetas</h1></a>
+        <a href="/recipes"><img src="/images/recetas.png" alt="" /></a
+        >
+      </div>
     </section>
   </body>
 </html>
 <style>
-	.index-container{
-		margin: 50px auto;
-		max-width: 800px;
-		    min-width: 365px;
-	
-	}
+  .index-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 110px auto;
+    max-width: 85%;
+    flex-direction: column;
+  }
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 200px;
+    cursor: pointer;
+  }
+  .image-container img {
+    width: 50%;
+  }
+  .image-container a {
+    display: flex;
+    text-decoration: none;
+    color: rgba(255, 81, 0, 0.708);
+  }
 </style>

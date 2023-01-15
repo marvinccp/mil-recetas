@@ -3,13 +3,13 @@ import '../styles/Navigation.css'
 const Navigation = () => {
   return (
     <div className="nav-container">
-      <h2>Mil-recetas</h2>
-      <ul>
+      <h2>MisRecetas</h2>
+      <ul className='menu-container'>
         <a href="/">
           <li>Home</li>
         </a>
         <a href="/recipes">
-          <li>Recipes</li>
+          <li>Recetas</li>
         </a>
       </ul>
     </div>

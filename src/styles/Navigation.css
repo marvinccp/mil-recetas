@@ -2,6 +2,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10vh;
-    background-color: aqua;
+    height: 14vh;
+    background-color: rgba(255, 81, 0, 0.708);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    color: rgb(253, 253, 253);
+}
+.nav-container h2{
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.menu-container{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.menu-container a{
+    list-style: none;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
 }

@@ -3,14 +3,14 @@ import "../../styles/Global.css";
 import BaseLayout from "../../layouts/base-layout.astro";
 
 const res = await (
-  await fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=b")
+  await fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=h")
 ).json();
 ---
 
 <BaseLayout />
 <div class="title-container">
 
-  <h2 class="title">Recipes</h2>
+  <h2 class="title">Recetas</h2>
 </div>
 <section class="recipes-container">
   {
@@ -51,6 +51,6 @@ const res = await (
    width: 80%;
    justify-content: center;
    align-items: center;
-   margin: 40px auto 20px auto;
+   margin: 110px auto 20px auto;
   }
 </style>
