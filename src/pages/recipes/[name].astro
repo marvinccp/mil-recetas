@@ -16,6 +16,9 @@ export async function getStaticPaths() {
 
 const { id } = Astro.params;
 const { recipe } = Astro.props;
+
+const noIngredient = "🥣";
+const noValue = "🍴";
 ---
 
 <BaseLayout />
@@ -27,39 +30,118 @@ const { recipe } = Astro.props;
   <div class="ingredients-container">
     <h2>ingredients</h2>
     <ul>
-      <li>{recipe.strIngredient1  || '😉'} : <span>{recipe.strMeasure1 || '🛏'} </span></li>
-      <li>{recipe.strIngredient2 || '😉' } : <span>{recipe.strMeasure2 || '🛏'} </span></li>
-      <li>{recipe.strIngredient3 || '😉' } : <span>{recipe.strMeasure3 || '🛏'} </span></li>
-      <li>{recipe.strIngredient4 || '😉' } : <span>{recipe.strMeasure4 || '🛏'} </span></li>
-      <li>{recipe.strIngredient5 || '😉' } : <span>{recipe.strMeasure5 || '🛏'} </span></li>
-      <li>{recipe.strIngredient6 || '😉' } : <span>{recipe.strMeasure6 || '🛏'} </span></li>
-      <li>{recipe.strIngredient7 || '😉' } : <span>{recipe.strMeasure7 || '🛏'} </span></li>
-      <li>{recipe.strIngredient8 || '😉' } : <span>{recipe.strMeasure8 || '🛏'} </span></li>
-      <li>{recipe.strIngredient9 || '😉' } : <span>{recipe.strMeasure9 || '🛏'} </span></li>
-      <li>{recipe.strIngredient10 || '😉' } : <span>{recipe.strMeasure10 || '🛏'} </span></li>
-      <li>{recipe.strIngredient11 || '😉' } : <span>{recipe.strMeasure11 || '🛏'} </span></li>
-      <li>{recipe.strIngredient12 || '😉' } : <span>{recipe.strMeasure12 || '🛏'} </span></li>
-      <li>{recipe.strIngredient13 || '😉' } : <span>{recipe.strMeasure13 || '🛏'} </span></li>
-      <li>{recipe.strIngredient14 || '😉' } : <span>{recipe.strMeasure14 || '🛏'} </span></li>
-      <li>{recipe.strIngredient15 || '😉' } : <span>{recipe.strMeasure15 || '🛏'} </span></li>
-      <li>{recipe.strIngredient16 || '😉' } : <span>{recipe.strMeasure16 || '🛏'} </span></li>
-      <li>{recipe.strIngredient17 || '😉' } : <span>{recipe.strMeasure17 || '🛏'} </span></li>
-      <li>{recipe.strIngredient18 || '😉' } : <span>{recipe.strMeasure18 || '🛏'} </span></li>
-      <li>{recipe.strIngredient19 || '😉' } : <span>{recipe.strMeasure19 || '🛏'} </span></li>
-      <li>{recipe.strIngredient20 || '😉' } : <span>{recipe.strMeasure20 || '🛏'} </span></li>
+      <li>
+        {recipe.strIngredient1 || noIngredient} : <span
+          >{recipe.strMeasure1 || noValue}
+        </span>
+      </li>
+      <li>
+        {recipe.strIngredient2 || noIngredient} : <span
+          >{recipe.strMeasure2 || noValue}
+        </span>
+      </li>
+      <li>
+        {recipe.strIngredient3 || noIngredient} : <span
+          >{recipe.strMeasure3 || noValue}
+        </span>
+      </li>
+      <li>
+        {recipe.strIngredient4 || noIngredient} : <span
+          >{recipe.strMeasure4 || noValue}
+        </span>
+      </li>
+      <li>
+        {recipe.strIngredient5 || noIngredient} : <span
+          >{recipe.strMeasure5 || noValue}
+        </span>
+      </li>
+      <li>
+        {recipe.strIngredient6 || noIngredient} : <span
+          >{recipe.strMeasure6 || noValue}
+        </span>
+      </li>
+      <li>
+        {recipe.strIngredient7 || noIngredient} : <span
+          >{recipe.strMeasure7 || noValue}
+        </span>
+      </li>
+      <li>
+        {recipe.strIngredient8 || noIngredient} : <span
+          >{recipe.strMeasure8 || noValue}
+        </span>
+      </li>
+      <li>
+        {recipe.strIngredient9 || noIngredient} : <span
+          >{recipe.strMeasure9 || noValue}
+        </span>
+      </li>
+      <li>
+        {recipe.strIngredient10 || noIngredient} : <span
+          >{recipe.strMeasure10 || noValue}
+        </span>
+      </li>
+      <li>
+        {recipe.strIngredient11 || noIngredient} : <span
+          >{recipe.strMeasure11 || noValue}
+        </span>
+      </li>
+      <li>
+        {recipe.strIngredient12 || noIngredient} : <span
+          >{recipe.strMeasure12 || noValue}
+        </span>
+      </li>
+      <li>
+        {recipe.strIngredient13 || noIngredient} : <span
+          >{recipe.strMeasure13 || noValue}
+        </span>
+      </li>
+      <li>
+        {recipe.strIngredient14 || noIngredient} : <span
+          >{recipe.strMeasure14 || noValue}
+        </span>
+      </li>
+      <li>
+        {recipe.strIngredient15 || noIngredient} : <span
+          >{recipe.strMeasure15 || noValue}
+        </span>
+      </li>
+      <li>
+        {recipe.strIngredient16 || noIngredient} : <span
+          >{recipe.strMeasure16 || noValue}
+        </span>
+      </li>
+      <li>
+        {recipe.strIngredient17 || noIngredient} : <span
+          >{recipe.strMeasure17 || noValue}
+        </span>
+      </li>
+      <li>
+        {recipe.strIngredient18 || noIngredient} : <span
+          >{recipe.strMeasure18 || noValue}
+        </span>
+      </li>
+      <li>
+        {recipe.strIngredient19 || noIngredient} : <span
+          >{recipe.strMeasure19 || noValue}
+        </span>
+      </li>
+      <li>
+        {recipe.strIngredient20 || noIngredient} : <span
+          >{recipe.strMeasure20 || noValue}
+        </span>
+      </li>
     </ul>
   </div>
   <h2 class="instructions-title">Instructions</h2>
   <p>{recipe.strInstructions}</p>
   <h2 class="instructions-title">Source</h2>
+  <a class="source-link" href={recipe.strSource} target="_blank"
+    >{recipe.strSource || "No source"}</a
+  >
 </article>
 
-
-
-
 <style>
-
-  .title-container{
+  .title-container {
     margin: 150px auto 0 auto;
     display: flex;
     justify-content: center;
@@ -72,35 +154,38 @@ const { recipe } = Astro.props;
     display: flex;
     flex-direction: column;
   }
-  .recipe-container img{
+  .recipe-container img {
     width: 100%;
   }
 
-  .ingredients-container{
+  .ingredients-container {
     margin: 30px 0 0 0;
   }
-  .ingredients-container ul{
+  .ingredients-container ul {
     margin: 30px 0 0 30px;
   }
-  .ingredients-container ul li{
+  .ingredients-container ul li {
     font-size: 1.2rem;
   }
-  span{
+  span {
     margin: 0 0 0 5px;
     color: rgb(76, 76, 76);
     font-weight: bold;
   }
-  p{
+  p {
     margin: 20px 0 0 0;
     font-size: 1.3rem;
   }
-  .instructions-title{
+  .instructions-title {
     margin: 20px 0 0 0;
   }
 
-@media(min-width:768px){
-  .recipe-container {
-    width: 70%;
+  .source-link {
+    margin: 0 0 80px 0;
   }
-}
+  @media (min-width: 768px) {
+    .recipe-container {
+      width: 55%;
+    }
+  }
 </style>
